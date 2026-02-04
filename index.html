@@ -30,8 +30,10 @@ async function login() {
     return;
   }
 
-  localStorage.setItem("role", res.role);
-  window.location.href = "home.html";
+  if (res.success) {
+    localStorage.setItem("loggedIn", "true");
+    window.location.href = "home.html";
+  }
 }
 </script>
 
