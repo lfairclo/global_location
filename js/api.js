@@ -1,4 +1,4 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbw9JlOgwFD7jsZxG1jIeL9XCd4ECNUeeR8yEM6qKQsYAWi_dk4JPftn-2hq6Wp6_5FZdQ/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbxaGNDVw5caigEA3dBvPoRU-XLBJ6mAENO6AMbgZhREqbIKHhVfBS_gTpCXDmv8lC85FQ/exec";
 
 async function apiCall(params) {
   const query = new URLSearchParams(params).toString();
