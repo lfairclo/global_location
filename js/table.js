@@ -1,6 +1,10 @@
 async function loadTable() {
-  const res = await apiCall({ action: "getTable" });
-  document.getElementById("tableContainer").innerHTML = res.html;
+  const res = await apiCall({
+    action: "getGrid",
+    class: CLASS
+  });
+
+  renderGrid(res.grid);
 }
 
 function downloadTable() {
