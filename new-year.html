@@ -1,0 +1,31 @@
+<h2>Create New League Year</h2>
+
+<input id="year" placeholder="Year (e.g. 2026)">
+
+<h3>Class A</h3>
+<textarea id="classA"></textarea>
+
+<h3>Class B</h3>
+<textarea id="classB"></textarea>
+
+<button onclick="submitYear()">Create</button>
+
+<script src="js/api.js"></script>
+<script>
+async function submitYear() {
+  const role = localStorage.getItem("role");
+  if (role !== "teacher") {
+    alert("Teachers only");
+    return;
+  }
+
+  await apiCall({
+    action: "createYear",
+    year: year.value,
+    classA: classA.value.split("\n"),
+    classB: classB.value.split("\n")
+  });
+
+  window.location.href = "home.html";
+}
+</script>
