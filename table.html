@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>League Table</title>
+  <title>League Grid</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/api.js"></script>
-  <script src="js/table.js"></script>
+  <script src="js/grid.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 </head>
 <body>
 <header>
-  <h1>League Table</h1>
+  <h1>League Grid</h1>
 </header>
 
 <div class="container">
   <div class="card">
-    <button onclick="downloadTable()">⬇ Download Table</button>
-    <div id="tableContainer" style="margin-top:20px;"></div>
+    <div id="gridContainer"></div>
+
+    <button style="margin-top:20px" onclick="downloadPNG()">
+      ⬇ Download as PNG
+    </button>
   </div>
 </div>
 </body>
