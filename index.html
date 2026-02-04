@@ -16,17 +16,17 @@
 
 <script>
 async function login() {
-  const email = email.value;
-  const password = password.value;
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
 
   const res = await apiCall({
     action: "login",
-    email,
-    password
+    email: emailInput.value.trim(),
+    password: passwordInput.value
   });
 
   if (!res.success) {
-    error.textContent = "Invalid login";
+    document.getElementById("error").textContent = "Invalid login";
     return;
   }
 
