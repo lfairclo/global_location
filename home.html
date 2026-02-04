@@ -9,21 +9,26 @@
 <header>
   <h1>League Dashboard</h1>
 </header>
-
-<div class="container">
-  <div class="button-grid">
-    <button onclick="location.href='table.html'">
-      📊 View League Table
-    </button>
-
-    <button onclick="location.href='fixtures.html'">
-      📅 View Matches
-    </button>
-
-    <button disabled>
-      ⚽ Live Matches (coming soon)
-    </button>
+  
+  <div class="container">
+    <div class="grid-2">
+    <div class="card">
+      <h2>8A</h2>
+      <a href="table_8a.html">View League Table</a>
+      <a href="matches_8a.html">View Matches</a>
+    </div>
+  
+    <div class="card">
+      <h2>8H</h2>
+      <a href="table_8h.html">View League Table</a>
+      <a href="matches_8h.html">View Matches</a>
+    </div>
   </div>
+  
+  <div style="text-align:center; margin-top:30px">
+    <a class="primary" href="live.html">Live Matches</a>
+  </div>
+
 </div>
 </body>
 </html>
