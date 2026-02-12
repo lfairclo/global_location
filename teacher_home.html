@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Teacher League Home</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/auth.js"></script>
+
+  <script>
+    if (localStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "index.html";
+    }
+  </script>
+</head>
+
+<body>
+<header>
+  <h1>Teacher League Dashboard</h1>
+</header>
+  
+  <div class="container">
+    <div class="grid-2">
+    <div class="card">
+      <h2>8A</h2>
+      <button onclick="location.href='table_8a.html'">View Leauge Table</button>
+      <button onclick="location.href='matches_8a.html'">View Matches</button>
+      <button onclick="location.href='teacher_matches_8a.html'">Edit scores of matches / Score Matches</button>
+
+    </div>
+  
+    <div class="card">
+      <h2>8H</h2>
+      <button onclick="location.href='table_8h.html'">View Leauge Table</button>
+      <button onclick="location.href='matches_8h.html'">View Matches</button>
+      <button onclick="location.href='teacher_matches_8h.html'">Edit scores of matches / Score Matches</button>
+    </div>
+  </div>
+  
+  <div style="text-align:center; margin-top:30px">
+    <a class="primary" href="live.html">Host Live Matches</a>
+  </div>
+
+</div>
+</body>
+</html>
