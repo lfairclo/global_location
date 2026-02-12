@@ -1,44 +1,37 @@
 async function loadGrid() {
-  const res = await apiCall({ action: "getGrid" });
+  const res = await apiCall({ action: "getGrid", class: CLASS });
 
   if (res.error) {
     document.getElementById("gridContainer").textContent = res.error;
     return;
   }
 
+  const container = document.getElementById("gridContainer");
+  container.innerHTML = "";
+
   const table = document.createElement("table");
-  table.style.borderCollapse = "collapse";
-  table.style.marginTop = "20px";
+  table.className = "league-table";
 
   res.grid.forEach((row, r) => {
     const tr = document.createElement("tr");
 
     row.forEach((cell, c) => {
-      const td = document.createElement("td");
-      td.textContent = cell;
-      td.style.border = "1px solid #333";
-      td.style.padding = "6px 10px";
-      td.style.textAlign = "center";
+      const el = document.createElement(r === 0 || c === 0 ? "th" : "td");
+      el.textContent = cell;
 
-      // Diagonal (same player)
+      // Diagonal
       if (r === c && r > 0) {
-        td.style.background = "#ff9800";
-        td.textContent = "—";
+        el.classList.add("diagonal");
+        el.textContent = "—";
       }
 
-      // Header row / column
-      if (r === 0 || c === 0) {
-        td.style.fontWeight = "bold";
-        td.style.background = "#e5e7eb";
-      }
-
-      tr.appendChild(td);
+      tr.appendChild(el);
     });
 
     table.appendChild(tr);
   });
 
-  document.getElementById("gridContainer").appendChild(table);
+  container.appendChild(table);
 }
 
 function downloadPNG() {
