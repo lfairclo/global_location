@@ -37,17 +37,23 @@ async function loadMatches(week) {
 
   res.matches.forEach(match => {
 
-    const div = document.createElement("div");
-    div.className = "match-card";
+    const row = document.createElement("div");
+    row.className = "match-row";
 
-    div.innerHTML = `
-      <strong>${match.home}</strong> vs <strong>${match.away}</strong>
-      <div class="status">Played: ${match.played || "No"}</div>
+    if (match.played && match.played !== "") {
+      row.classList.add("played");
+    }
+
+    row.innerHTML = `
+      <div class="team">${match.home}</div>
+      <div class="vs">vs</div>
+      <div class="team">${match.away}</div>
     `;
 
-    container.appendChild(div);
+    container.appendChild(row);
   });
 }
+
 
 
 document.getElementById("week").onchange = e => {
