@@ -72,3 +72,51 @@ button:hover, .btn:hover {
   background-color: #d9ead3;
   font-weight: bold;
 }
+
+/* Page layout centering */
+.page-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.page-header button {
+  margin-bottom: 10px;
+}
+
+/* Matches container */
+#matches {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Each match row */
+.match-row {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* Played matches */
+.match-row.played {
+  background: #d4edda; /* light green */
+}
+
+/* Team names */
+.team {
+  text-align: center;
+}
+
+/* VS column */
+.vs {
+  text-align: center;
+  font-weight: bold;
+  color: #555;
+}
+
+
