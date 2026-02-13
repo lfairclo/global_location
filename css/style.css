@@ -168,24 +168,40 @@ button:hover, .btn:hover {
 }
 
 /* Kept later versions of duplicates below */
-/* Updated container to force a horizontal row */
+/* Flexible container */
 .live-container {
   display: flex;
-  flex-direction: row; /* Forces children into a row */
+  flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  gap: 40px;
+  /* Gap scales between 10px and 40px based on screen width */
+  gap: clamp(10px, 4vw, 40px); 
   margin-top: 40px;
-  flex-wrap: nowrap; /* Prevents wrapping to a new line if screen is narrow */
-  overflow-x: auto;  /* Adds a scrollbar if the row is wider than the screen */
+  flex-wrap: wrap; 
 }
 
-/* Ensure the wrapper doesn't take up 100% width */
+/* Shrinkable buttons */
+button, .btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  /* Padding scales between 8px and 16px */
+  padding: clamp(8px, 1.5vw, 16px);
+  /* Font scales between 14px and 16px */
+  font-size: clamp(14px, 1.2vw, 16px);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.1s ease;
+  white-space: nowrap;
+}
+
 .pitch-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-shrink: 0; /* Prevents the pitches from squishing */
+  /* Allow the wrapper to shrink slightly if needed */
+  flex-shrink: 1; 
+  min-width: 0;
 }
 
 .pitch-top-controls {
@@ -207,10 +223,13 @@ button:hover, .btn:hover {
   gap: 8px;
 }
 
+/* If you want the pitch itself to shrink slightly on small screens */
 .pitch {
   position: relative;
-  width: 250px;
-  height: 450px;
+  /* Pitch width will be 250px unless the screen is very small */
+  width: clamp(200px, 40vw, 250px);
+  aspect-ratio: 250 / 450;
+  height: auto; 
   background-size: cover;
   background-position: center;
   border: 2px solid black;
