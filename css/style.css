@@ -52,7 +52,6 @@ button:hover, .btn:hover {
   margin: 20px auto;
   font-family: Arial, sans-serif;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
-
 }
 
 .league-table th,
@@ -157,45 +156,10 @@ button:hover, .btn:hover {
   transform: scale(1.2);
 }
 
-
-.live-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  margin: 30px auto;
-}
-
-.pitch-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
 .pitch-controls {
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-
-.pitch {
-  position: relative;
-  width: 250px;
-  height: 450px;
-  background-size: cover;
-  background-position: center;
-  border: 2px solid black;
-}
-
-.ball {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: white;
-  border-radius: 50%;
-  border: 2px solid black;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .player-panel {
@@ -203,21 +167,7 @@ button:hover, .btn:hover {
   margin: 10px 0;
 }
 
-.card-box {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  border: 2px solid black;
-  margin: 2px;
-}
-
-.red { background: red; }
-.yellow { background: yellow; }
-
-button:disabled {
-  opacity: 0.5;
-}
-
+/* Kept later versions of duplicates below */
 
 .live-container {
   display: flex;
